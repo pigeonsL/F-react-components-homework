@@ -44,20 +44,23 @@ class Chat extends Component {
       tag: tag.toString(),
     };
     this.setState({
-      // eslint-disable-next-line react/no-unused-state
       question: conversation,
     });
   };
 
   handleClick = () => {
+    // clear input when click button
+    document.getElementsByClassName('input')[0].value = '';
     const { question } = this.state;
+    if (question === undefined) {
+      return;
+    }
     let conversationContent;
-    // eslint-disable-next-line no-empty
     if (question.tag === '') {
-      conversationContent = this.state.message.concat(question);
+      conversationContent = this.state.messages.concat(question);
     } else {
       const answer = answersData.find((data) => data.tags.includes(question.tag));
-      conversationContent = this.state.message.concat(question, answer);
+      conversationContent = this.state.messages.concat(question, answer);
     }
     this.setState(() => {
       return {
@@ -73,7 +76,7 @@ class Chat extends Component {
       <main className="Chat">
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
-        <ChatInput handleChange={this.handleClick} handleClick={this.handleClick} />
+        <ChatInput handleChange={this.handleChange} handleClick={this.handleClick} />
       </main>
     );
   }
