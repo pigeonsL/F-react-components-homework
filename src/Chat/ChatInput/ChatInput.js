@@ -5,8 +5,10 @@ class ChatInput extends Component {
   render() {
     return (
       <footer className="ChatInput">
-        <input type="text" />
-        <button type="button">Send</button>
+        <input className="input" type="text" onChange={this.props.handleChange} />
+        <button type="button" onClick={this.props.handleClick}>
+          Send
+        </button>
       </footer>
     );
   }

@@ -27,13 +27,29 @@ class Chat extends Component {
     }, 1000);
   }
 
+  findTagsOfInput = (question) => {
+    const Tags = answersData.map((answer) => answer.tags);
+    const questionTag = Tags.find((tag) => question.includes(tag));
+    return questionTag;
+  };
+
+  handleChange = (e) => {
+    const question = e.target.value;
+    let tag = this.findTagsOfInput(question);
+    if (tag === undefined) {
+      tag = '';
+    }
+  };
+
+  handleClick = () => {};
+
   render() {
     const { shop, messages } = this.state;
     return (
       <main className="Chat">
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
-        <ChatInput />
+        <ChatInput handleChange={this.handleClick()} handleClick={this.handleClick()} />
       </main>
     );
   }
