@@ -39,9 +39,33 @@ class Chat extends Component {
     if (tag === undefined) {
       tag = '';
     }
+    const conversation = {
+      text: question,
+      tag: tag.toString(),
+    };
+    this.setState({
+      // eslint-disable-next-line react/no-unused-state
+      question: conversation,
+    });
   };
 
-  handleClick = () => {};
+  handleClick = () => {
+    const { question } = this.state;
+    let conversationContent;
+    // eslint-disable-next-line no-empty
+    if (question.tag === '') {
+      conversationContent = this.state.message.concat(question);
+    } else {
+      const answer = answersData.find((data) => data.tags.includes(question.tag));
+      conversationContent = this.state.message.concat(question, answer);
+    }
+    this.setState(() => {
+      return {
+        messages: conversationContent,
+        question: undefined,
+      };
+    });
+  };
 
   render() {
     const { shop, messages } = this.state;
@@ -49,7 +73,7 @@ class Chat extends Component {
       <main className="Chat">
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
-        <ChatInput handleChange={this.handleClick()} handleClick={this.handleClick()} />
+        <ChatInput handleChange={this.handleClick} handleClick={this.handleClick} />
       </main>
     );
   }
