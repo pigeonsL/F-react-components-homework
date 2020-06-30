@@ -1,0 +1,16 @@
+.welcome-menu {
+  background-color: #dfe4ea;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+a {
+  flex-grow: 1;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+}

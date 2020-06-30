@@ -3,6 +3,7 @@ import shopData from "../data/shop.json";
 import WelcomeBox from "./WelcomeBox/WelcomeBox";
 import WelcomeFooter from "./WelcomeFooter/WelcomeFooter";
 import WelcomeHeader from "./WelcomeHeader/WelcomeHeader";
+import "./Welcome.scss";
 
 class Welcome extends Component{
     constructor(props) {
@@ -21,11 +22,11 @@ class Welcome extends Component{
     }
 
     render() {
-        const {shop} = this.state;
+        const { shop } = this.state;
         return (
             <main className="welcome-page">
                 <WelcomeHeader/>
-                <WelcomeBox />
+                <WelcomeBox shop={shop}/>
                 <WelcomeFooter/>
             </main>
         )
