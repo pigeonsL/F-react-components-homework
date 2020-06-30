@@ -17,6 +17,7 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router-dom": "^5.2.0",
     "sass": "^1.26.5"
   },
   "devDependencies": {
