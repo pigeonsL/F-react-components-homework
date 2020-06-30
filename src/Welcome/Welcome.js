@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import shopData from "../data/shop.json";
+import WelcomeBox from "./WelcomeBox/WelcomeBox";
+import WelcomeFooter from "./WelcomeFooter/WelcomeFooter";
+import WelcomeHeader from "./WelcomeHeader/WelcomeHeader";
 
 class Welcome extends Component{
     constructor(props) {
@@ -27,6 +30,5 @@ class Welcome extends Component{
             </main>
         )
     }
-
-
 }
+export default Welcome;
