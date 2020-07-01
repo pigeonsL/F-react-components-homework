@@ -1,0 +1,17 @@
+.notfound{
+  border: 10px solid black;
+  border-radius: 40px;
+  width: 350px;
+  height: 600px;
+  background-color: #f1f2f6;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.notfound-body{
+  padding-top: 50%;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+}

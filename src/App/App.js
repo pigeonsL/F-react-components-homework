@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.scss';
 import Welcome from "../Welcome/Welcome";
 import Chat from "../Chat/Chat";
+import NotFound from "../NotFound/NotFound";
 
 class App extends Component {
   render() {
@@ -11,8 +12,8 @@ class App extends Component {
         <Router>
           <Route path="/" component={Welcome}/>
           <Route path="/chat" component={Chat}/>
-          <Route path="/activity" component={Welcome}/>
-          <Route path="/about" component={Welcome}/>
+          <Route path="/activity" component={NotFound}/>
+          <Route path="/about" component={NotFound}/>
         </Router>
       </div>
     );
