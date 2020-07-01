@@ -24,7 +24,7 @@ class Chat extends Component {
         shop: shopData,
         messages,
       });
-    }, 1000);
+    }, 500);
   }
 
   findTagsOfInput = (question) => {

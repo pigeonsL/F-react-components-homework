@@ -4,7 +4,7 @@ import "./WelcomeHeader.scss";
 class WelcomeHeader extends Component{
     render() {
         return(
-            <header className="welcome-header">
+            <header>
                 <h1>Welcome</h1>
             </header>
         )

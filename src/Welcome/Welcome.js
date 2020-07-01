@@ -18,7 +18,7 @@ class Welcome extends Component{
             this.setState({
                 shop: shopData,
             });
-        }, 1000);
+        }, 500);
     }
 
     render() {
